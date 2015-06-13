@@ -26,3 +26,22 @@ def approximate_size(size,a_kilobyte_is_1024_bytes=True):
 if __name__ == "__main__":
     print(approximate_size(1000000000000,False))
     print(approximate_size(1000000000000))
+
+    # Python search paths
+    import sys
+    print(sys.path)
+    sys.path.insert(0,r"C:\temp")
+    print(sys.path)
+
+    # Everything is an object
+    print(approximate_size.__doc__)
+
+    # Import errors
+    try:
+        import chardet
+    except ImportError:
+        chardet = None
+    if chardet:
+        print("chardet is imported")
+    else:
+        print("failed to import chardet")
