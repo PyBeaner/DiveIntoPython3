@@ -1,0 +1,36 @@
+__author__ = 'PyBeaner'
+
+
+def is_it_true(anything):
+    if anything:
+        print("yes,%s is true" % anything)
+    else:
+        print("no,%s is false" % anything)
+
+if __name__=="__main__":
+    # <class 'int'>
+    print(type(1))
+
+    # True
+    print(isinstance(1,int))
+
+    import fractions
+    x = fractions.Fraction(1,3)
+    print(x)
+    print(x*2)
+    print(fractions.Fraction(4,6))
+    # Error
+    # print(fractions.Fraction(0,0))
+
+    import math
+    print(math.pi)
+    print(math.sin(math.pi/2))
+
+    is_it_true(1)
+    is_it_true(-1)
+    is_it_true(0)
+    is_it_true(0.1)
+    is_it_true(0.0)
+
+    is_it_true(fractions.Fraction(1,2))
+    is_it_true(fractions.Fraction(0,2))
