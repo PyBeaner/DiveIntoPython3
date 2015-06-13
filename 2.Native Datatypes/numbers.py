@@ -1,5 +1,6 @@
 __author__ = 'PyBeaner'
-
+import fractions
+import math
 
 def is_it_true(anything):
     if anything:
@@ -14,7 +15,6 @@ if __name__=="__main__":
     # True
     print(isinstance(1,int))
 
-    import fractions
     x = fractions.Fraction(1,3)
     print(x)
     print(x*2)
@@ -22,7 +22,6 @@ if __name__=="__main__":
     # Error
     # print(fractions.Fraction(0,0))
 
-    import math
     print(math.pi)
     print(math.sin(math.pi/2))
 
