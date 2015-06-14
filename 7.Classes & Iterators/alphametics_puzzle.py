@@ -18,7 +18,7 @@ def solve(puzzle):
 
     for guess in itertools.permutations(digits,len(characters)):
         if zero not in guess[:n]:  # n is the words(first letters) count, first letters cannot be zero
-            equation = puzzle.translate(dict(zip(characters,guess)))
+            equation = puzzle.translate(dict(zip(characters,guess)))  # map characters with the guessing digits
             if eval(equation):
                 return equation
 
