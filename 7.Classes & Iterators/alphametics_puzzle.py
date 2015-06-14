@@ -16,9 +16,11 @@ def solve(puzzle):
     digits = tuple(ord(c) for c in "0123456789")
     zero = digits[0]
 
-    for guess in itertools.permutations(digits,len(characters)):
+    for guess in itertools.permutations(digits,len(characters)):  # 矩阵（从digits中，取出不含重复元素的序列：（1，3，4，5，2，0...））
         if zero not in guess[:n]:  # n is the words(first letters) count, first letters cannot be zero
-            equation = puzzle.translate(dict(zip(characters,guess)))  # map characters with the guessing digits
+            # map characters with the guessing digits
+            # translate from a byte to another
+            equation = puzzle.translate(dict(zip(characters,guess)))
             if eval(equation):
                 return equation
 
