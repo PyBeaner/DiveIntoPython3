@@ -23,3 +23,9 @@ os.chdir(cur_dir)
 os.chdir("../2.Native Datatypes")
 import glob
 print(glob.glob("*.py"))
+metadata = os.stat("booleans.py")
+print(metadata.st_mtime)
+import time
+t = time.localtime(metadata.st_mtime)
+print(t)
+print("size:",metadata.st_size,"bytes")
