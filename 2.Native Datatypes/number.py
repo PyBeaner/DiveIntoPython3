@@ -4,9 +4,9 @@ import math
 
 def is_it_true(anything):
     if anything:
-        print("yes,%s is true" % anything)
+        print("yes,{0} is true".format(str(anything)))
     else:
-        print("no,%s is false" % anything)
+        print("no,{0} is false".format(str(anything)))
 
 if __name__=="__main__":
     # <class 'int'>

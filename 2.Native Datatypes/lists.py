@@ -46,9 +46,9 @@ print(a_list)
 # [].pop() #IndexError:pop from empty list
 
 # boolean
-import numbers
-numbers.is_it_true([])
-numbers.is_it_true(["a"])
-numbers.is_it_true([False])
+import number
+number.is_it_true([])
+number.is_it_true(["a"])
+number.is_it_true([False])
 
 
