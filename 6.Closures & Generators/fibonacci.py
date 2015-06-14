@@ -23,8 +23,6 @@ if __name__=="__main__":
     count = 20
     fibs = list(fib(count))
     print(fibs[-1])
-    # for n in fib(20):
-    #     print(n,end=" ")
     end = time.clock()
     print()
     #  0.000033 seconds
