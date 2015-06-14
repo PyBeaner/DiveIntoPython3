@@ -17,14 +17,13 @@ def build_match_and_apply_function(pattern,search,replace):
 
     return match_rule,apply_rule
 
-patterns = (
-    ("[sxz]$","$","es"),
-    ("[^aeioudgkprt]h$","$","es"),
-    ("(qu[^aeiou])y$","y$","ies"),
-    ("$","$","s"),
-)
+rules = []
+with open("plural-rule.txt") as file:
+    for line in file:
+        pattern,search,replace = line.split(None,3) # split by any whitespaces, and take 3 sections
+        rules.append(build_match_and_apply_function(
+            pattern,search,replace))
 
-rules = [build_match_and_apply_function(pattern,search,replace) for pattern,search,replace in patterns]
 
 if __name__ == "__main__":
     print(plural("fox"))
