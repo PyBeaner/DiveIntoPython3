@@ -14,3 +14,17 @@ for child in root:
 print(root.attrib) #{'{http://www.w3.org/XML/1998/namespace}lang': 'en'}
 print(root[4]) # children indexing
 print(root[4].attrib) # child is also an ElementTree
+
+# finding
+feeds = root.findall("{http://www.w3.org/2005/Atom}feed")
+print(feeds)  # []
+authors = root.findall("{http://www.w3.org/2005/Atom}author")
+print(authors) # still empty(authors are grandchildren..)
+
+entries = root.findall("{http://www.w3.org/2005/Atom}entry")
+print(len(entries))
+title = entries[0].find("{http://www.w3.org/2005/Atom}title")# find the first child(None if nothing find)
+print(title.text)
+
+links = tree.findall("//{http://www.w3.org/2005/Atom}link") # ElementTree.findall
+print(len(links)) # 5 links(// means search all including the nested children)
