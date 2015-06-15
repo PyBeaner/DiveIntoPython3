@@ -10,4 +10,4 @@ response, content = h.request('http://img3.douban.com/view/dale-online/dale_ad/p
 print(response.status)
 print(len(content))
 print(response.fromcache) # the first time it's False;then it was cached,so fromcache is true
-# 
+#
