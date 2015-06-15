@@ -21,3 +21,18 @@ a_file.close()
 print(a_file.closed)
 # close again(no-op)
 a_file.close()
+
+
+# runtime context
+with open("example.py",encoding="utf-8") as a_file:
+    a_file.seek(32)
+    a_char = a_file.read(1)
+    print(a_char)
+
+print(a_file.closed) # True
+
+with open("example.py",encoding="utf-8") as a_file:
+    line_number = 0
+    for line in a_file:
+        line_number+=1
+        print("{:>4} {}".format(line_number,line))
