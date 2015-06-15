@@ -17,3 +17,8 @@ import pickle
 
 with open("entry.pickle","wb") as f:
     pickle.dump(entry,f)
+
+# without files
+b = pickle.dumps(entry)
+print(type(b)) #bytes
+print(pickle.loads(b))
