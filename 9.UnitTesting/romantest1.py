@@ -49,6 +49,18 @@ class KnownValues(unittest.TestCase):
             result = roman1.to_roman(integer)
             self.assertEqual(numeral,result)
 
+    def test_from_roman_known_values(self):
+        """from_roman should give known result with known input"""
+        for integer,numeral in self.known_values:
+            result = roman1.from_roman(numeral)
+            self.assertEqual(integer,result)
+
+    def test_round_trip(self):
+        """from_roman(to_roman(n)) should equals to n"""
+        for integer in range(1,4000):
+            result = roman1.from_roman(roman1.to_roman(integer))
+            self.assertEqual(result,integer)
+
 
 if __name__ == "__main__":
     unittest.main()
