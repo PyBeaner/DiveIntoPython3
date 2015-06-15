@@ -1,5 +1,7 @@
 __author__ = 'PyBeaner'
 
+class OutOfRangeError(ValueError):
+    pass
 
 roman_numeral_map = (
         ("M",1000),
@@ -8,7 +10,7 @@ roman_numeral_map = (
         ("CD",400),
         ("C",100),
         ("XC",90),
-        ("L",50),  # no need to define numeral like  "LX","CX","CL",etc. 
+        ("L",50),  # no need to define numeral like  "LX","CX","CL",etc.
         ("XL",40),
         ("X",10),
         ("IX",9),
@@ -16,8 +18,12 @@ roman_numeral_map = (
         ("IV",4),
         ("I",1)
     )
+
 def to_roman(n):
     """convert an integer to Roman numeral"""
+    if not 0<n<4000:
+        raise OutOfRangeError("number out of range(must be less than 4000)")
+
     result = ""
     for numeral,integer in roman_numeral_map:
         while integer<=n:
