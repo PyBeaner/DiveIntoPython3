@@ -53,6 +53,8 @@ def to_roman(n):
 
 def from_roman(s):
     """convert Roman numeral to integer"""
+    if not s:
+        raise InvalidRomanNumeralError("Input can not be blank")
     if not roman_numeral_pattern.search(s):
         raise InvalidRomanNumeralError("Invalid Roman numeral:{0}".format(s))
     result = 0
