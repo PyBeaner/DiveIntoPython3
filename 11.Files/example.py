@@ -1,3 +1,6 @@
+# coding=utf-8
+# some chinese: 你好，中文
+
 import locale
 
 __author__ = 'PyBeaner'
