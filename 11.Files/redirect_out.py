@@ -7,10 +7,12 @@ class RedirectStdoutTo:
         self.new_out = new_out
 
     def __enter__(self):
+        # when entering a context£¨with£©
         self.old_out = sys.stdout
         sys.stdout = self.new_out
 
     def __exit__(self, *args):
+        # when exiting a context(end with)
         sys.stdout = self.old_out
 
 
