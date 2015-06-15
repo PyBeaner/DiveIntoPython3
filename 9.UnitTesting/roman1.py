@@ -1,3 +1,5 @@
+import re
+
 __author__ = 'PyBeaner'
 
 class OutOfRangeError(ValueError):
@@ -5,6 +7,18 @@ class OutOfRangeError(ValueError):
 
 class NotIntegerError(ValueError):
     pass
+
+class InvalidRomanNumeralError(ValueError):
+    pass
+
+roman_numeral_pattern = re.compile("""
+    ^                   #beginning of string
+    M{0,3}              #thousands - 0 to 3 Ms
+    (CM|CD|D?C{0,3})    #hundreds
+    (XC|XL|L?X{0,3})    #tens
+    (IX|IV|V?I{0,3})    #ones
+    $                   #end
+""",re.VERBOSE)
 
 roman_numeral_map = (
         ("M",1000),
@@ -39,6 +53,8 @@ def to_roman(n):
 
 def from_roman(s):
     """convert Roman numeral to integer"""
+    if not roman_numeral_pattern.search(s):
+        raise InvalidRomanNumeralError("Invalid Roman numeral:{0}".format(s))
     result = 0
     index = 0
     for numeral,integer in roman_numeral_map:
